@@ -7,14 +7,22 @@ namespace Data
     [CreateAssetMenu]
     public class Chapter : ScriptableObject
     {
+        [field: SerializeField] 
+        private LockedEntityData LockedEntityData { get; set; }
+        
         [field: SerializeField]
         [field: SerializeReference]
         private List<TextEvent> TextEvents { get; set; }
         
-        public Domain.Chapter ToDomain()
+        public Domain.Stories.Chapter ToDomain()
         {
             var textEvents = TextEvents.Select(r => r.ToDomain()).ToList();
-            return new Domain.Chapter(textEvents);
+            
+            return new Domain.Stories.Chapter(
+                textEvents, 
+                LockedEntityData.StatActor, 
+                LockedEntityData.LockedByStat,
+                LockedEntityData.LockedByStatValue);
         }
     }
 }

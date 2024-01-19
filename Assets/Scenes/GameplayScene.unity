@@ -306,7 +306,7 @@ MonoBehaviour:
   DropdownModalController: {fileID: 1678540098964840205}
   TextMeshPro: {fileID: 1174768419}
   ContinueButton: {fileID: 1791195320}
-  ChapterData: {fileID: 11400000, guid: fd541759d92624643bb875d58c85e58a, type: 2}
+  ChapterData: {fileID: 11400000, guid: e922844fb6ee59c42ae4067589fe2c22, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

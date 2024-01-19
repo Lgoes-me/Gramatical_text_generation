@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Utils;
 
-namespace Domain
+namespace Domain.Stories
 {
-    public class TextEvent
+    public class TextEvent : LockedByStatEntity
     {
         private string Data { get; }
         public int Tempo { get; private set; }
@@ -13,13 +13,19 @@ namespace Domain
 
         private Dictionary<string, Resolver> ResolversDict { get; }
         private List<string> Keys { get; }
-        
-        public TextEvent(string data, int tempo, List<Resolver> resolvers)
+
+        public TextEvent(
+            string data,
+            int tempo, 
+            List<Resolver> resolvers,
+            StatActor statActor,
+            string lockedByStat,
+            string lockedByStatValue) : base(statActor, lockedByStat, lockedByStatValue)
         {
             Data = data;
             Resolvers = resolvers;
             Tempo = tempo;
-            
+
             ResolversDict = Resolvers.ToDictionary(resolver => resolver.Key, resolver => resolver);
             Keys = ResolversDict.Select(r => r.Key).ToList();
         }
@@ -48,7 +54,7 @@ namespace Domain
                     ResponseText(response, result =>
                     {
                         responseText = responseText.Replace(key, result);
-                        
+
                         itemsProcessed++;
 
                         if (itemsProcessed == found.Count)

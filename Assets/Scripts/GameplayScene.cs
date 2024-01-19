@@ -1,6 +1,7 @@
 ﻿using System;
 using Controllers;
-using Domain;
+using Domain.Stories;
+using Domain.Actors;
 using Domain.Resolvers;
 using TMPro;
 using UnityEngine;
@@ -19,9 +20,8 @@ namespace Debug
         
         public Data.Chapter ChapterData;
         
-        public Actor Actor;
-        
-        private Chapter Chapter;
+        public World World;
+        public Chapter Chapter;
 
         private void Awake()
         {
@@ -29,12 +29,15 @@ namespace Debug
             Chapter = ChapterData.ToDomain();
             ContinueButton.onClick.AddListener(Resolve);
             
-            Actor = new Actor();
+            World = new World();
         }
         
         private void Resolve()
         {
-            Chapter.Resolve(WriteText);
+            Chapter.Resolve(WriteText, () =>
+            {
+                UnityEngine.Debug.Log("Acabou o capitulo");
+            });
         }
 
         private void WriteText(string nextText)

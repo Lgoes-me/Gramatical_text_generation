@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9859d5ae54aeea51f98c00c67ae67, type: 3}
   m_Name: 1_Introducao 1
   m_EditorClassIdentifier: 
+  <LockedByStat>k__BackingField: 
+  <LockedByStatValue>k__BackingField: 
   <Data>k__BackingField: 1_Introducao 1
   <Tempo>k__BackingField: 1
   <Resolvers>k__BackingField: []

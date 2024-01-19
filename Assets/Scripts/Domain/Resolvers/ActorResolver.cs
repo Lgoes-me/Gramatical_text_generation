@@ -15,7 +15,7 @@ namespace Domain.Resolvers
         
         public override void Resolve(Action<string> callback)
         {
-            var actor = GameplayScene.Instance.Actor;
+            var actor = GameplayScene.Instance.World.Player;
 
             if (actor.Stats.TryGetValue(Key, out var stat))
             {

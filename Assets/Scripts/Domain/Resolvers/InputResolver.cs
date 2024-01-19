@@ -22,7 +22,7 @@ namespace Domain.Resolvers
                 return;
             }
             
-            var actor = GameplayScene.Instance.Actor;
+            var actor = GameplayScene.Instance.World.Player;
 
             if (actor.Stats.TryGetValue(Key, out var stat))
             {
