@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Domain.Resolvers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,24 +20,26 @@ namespace Controllers
         [field: SerializeField]
         private Button ContinueButton { get; set; }
 
+        private List<StatOption> Options { get; set; }
         private bool CanContinue { get; set; }
         
-        public void GetInput(string tittle, List<string> options, Action<string> callback)
+        public void GetInput(string tittle, List<StatOption> options, Action<StatOption> callback)
         {
             gameObject.SetActive(true);
             
-            Tittle.SetText(tittle);
-            Dropdown.options = options.Select(s => new TMP_Dropdown.OptionData(s)).ToList();
+            Options = options;
+            Dropdown.options = Options.Select(s => new TMP_Dropdown.OptionData(s.StatValue)).ToList();
             
+            Tittle.SetText(tittle);
             ContinueButton.onClick.AddListener(TryContinue);
             StartCoroutine(WaitForKeyDown(callback));
         }
         
-        private IEnumerator WaitForKeyDown(Action<string> callback)
+        private IEnumerator WaitForKeyDown(Action<StatOption> callback)
         {
             yield return new WaitUntil(() => CanContinue);
             gameObject.SetActive(false);
-            callback(Dropdown.options[Dropdown.value].text);
+            callback(Options[Dropdown.value]);
         }
 
         private void TryContinue()

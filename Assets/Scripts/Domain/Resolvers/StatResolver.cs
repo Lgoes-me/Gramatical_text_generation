@@ -27,17 +27,13 @@ namespace Domain.Resolvers
 
                 if (result != null)
                 {
-                    callback(result.Option);
-                }
-                else
-                {
-                    //default ??
+                    callback(result.OptionText);
+                    return;
                 }
             }
-            else
-            {
-                //default ??
-            }
+            
+            var defaultOption = Options.First(o => string.IsNullOrWhiteSpace(o.StatValue));
+            callback(defaultOption.OptionText);
         }
     }
 
@@ -48,6 +44,6 @@ namespace Domain.Resolvers
         public string StatValue { get; set; }
         
         [field: SerializeField]
-        public string Option { get; set; }
+        public string OptionText { get; set; }
     }
 }

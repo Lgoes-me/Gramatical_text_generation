@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Controllers;
 using Domain.Stories;
 using Domain.Actors;
@@ -45,24 +46,15 @@ namespace Debug
             var currentText = TextMeshPro.text;
             TextMeshPro.SetText($"{currentText} <br>{nextText}"); 
         }
-
-        public void OpenModal(InputResolver resolver, Action<string> callback)
+        
+        public void OpenModal(InputFieldResolver resolver, Action<string> callback)
         {
-            switch (resolver)
-            {
-                case InputFieldResolver inputFieldResolver:
-                {
-                    InputModalController.GetInput(inputFieldResolver.Tittle, callback);
-                    break;
-                }
-                case InputDropdownResolver dropdownResolver:
-                {
-                    DropdownModalController.GetInput(dropdownResolver.Tittle, dropdownResolver.Options, callback);
-                    break;
-                }
-            }
-            
+            InputModalController.GetInput(resolver.Tittle, callback);
         }
         
+        public void OpenModal(InputDropdownResolver resolver, Action<StatOption> callback)
+        {
+            DropdownModalController.GetInput(resolver.Tittle, resolver.Options, callback);
+        }
     }
 }

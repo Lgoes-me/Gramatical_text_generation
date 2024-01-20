@@ -1,6 +1,7 @@
 ﻿using System;
 using Debug;
 using Domain.Actors;
+using Domain.Resolvers;
 
 namespace Domain.Stories
 {
@@ -19,19 +20,12 @@ namespace Domain.Stories
 
         public bool IsUnlocked()
         {
-            if (StatActor == StatActor.Unlocked)
+            if (StatActor == StatActor.Undefined)
             {
                 return true;
             }
             
-            var actor = StatActor switch
-            {
-                StatActor.World => GameplayScene.Instance.World,
-                StatActor.Player => GameplayScene.Instance.World.Player,
-                StatActor.Chapter => GameplayScene.Instance.Chapter,
-                
-                _ => throw new ArgumentOutOfRangeException()
-            };
+            var actor = StatActor.ToActor();
             
             if (string.IsNullOrWhiteSpace(LockedByStat))
             {
@@ -49,7 +43,7 @@ namespace Domain.Stories
 
     public enum StatActor
     {
-        Unlocked,
+        Undefined,
         Player,
         World,
         Chapter,
