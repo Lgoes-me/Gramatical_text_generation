@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9859d5ae54aeea51f98c00c67ae67, type: 3}
   m_Name: 4_DesenvolvementoFinal
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: 4_DesenvolvementoFinal
+  <Data>k__BackingField: 
+  <LockedEntityData>k__BackingField:
+    <StatActor>k__BackingField: 0
+    <LockedByStat>k__BackingField: 
+    <LockedByStatValue>k__BackingField: 
   <Tempo>k__BackingField: 4
   <Resolvers>k__BackingField: []
   references:

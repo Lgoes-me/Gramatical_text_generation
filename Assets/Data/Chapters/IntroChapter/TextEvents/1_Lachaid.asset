@@ -10,15 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77c9859d5ae54aeea51f98c00c67ae67, type: 3}
-  m_Name: 3_DesenvolvementoMeio
+  m_Name: 1_Lachaid
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: 
+  <Data>k__BackingField: "#Onde jazem adormecidas as ru\xEDnas do primeiro e maior
+    reino humano desde o amanhecer."
   <LockedEntityData>k__BackingField:
     <StatActor>k__BackingField: 0
     <LockedByStat>k__BackingField: 
     <LockedByStatValue>k__BackingField: 
-  <Tempo>k__BackingField: 3
-  <Resolvers>k__BackingField: []
+  <Tempo>k__BackingField: 1
+  <Resolvers>k__BackingField:
+  - rid: 28740606505254913
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 28740606505254913
+      type: {class: OptionsResolver, ns: Data.Resolvers, asm: Assembly-CSharp}
+      data:
+        <Key>k__BackingField: '#Onde'
+        <Options>k__BackingField:
+        - Sob as dunas de Lachaid
+        - Abaixo Lachaid
+        - Escondido sob Lachaid

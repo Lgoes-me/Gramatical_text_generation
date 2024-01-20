@@ -12,18 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ed9a014caf4632af06a3bee3e67847, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
+  <LockedEntityData>k__BackingField:
+    <StatActor>k__BackingField: 0
+    <LockedByStat>k__BackingField: 
+    <LockedByStatValue>k__BackingField: 
   <TextEvents>k__BackingField:
   - {fileID: 11400000, guid: 3a665b8455eb7eb4aa395b2938a6a6c3, type: 2}
-  - {fileID: 11400000, guid: c13c6f2f9076e5a4fb2ffc057427cb9e, type: 2}
-  - {fileID: 11400000, guid: 7a323c80812a252428dcad233fca2f79, type: 2}
-  - {fileID: 11400000, guid: 556a98cb9f6bf5f4c9f34b3a5fa4dbe7, type: 2}
   - {fileID: 11400000, guid: d33611da8094b8c4894c517e13e33a15, type: 2}
-  - {fileID: 11400000, guid: dfde1676dd7dc58408188f66a5cdc138, type: 2}
-  - {fileID: 11400000, guid: e21b26fec1444ff4097708571e0a09d5, type: 2}
   - {fileID: 11400000, guid: 581b4e23fd21b384cb216a7914acf287, type: 2}
-  - {fileID: 11400000, guid: 1c44b1af6d6adfa4fac70b86a2ddf3fc, type: 2}
-  - {fileID: 11400000, guid: 1bf52ca31b0775e40a62f4e50da8a87e, type: 2}
-  - {fileID: 11400000, guid: c210062bd4cf00849aec398c5ce93a60, type: 2}
   - {fileID: 11400000, guid: 7fcf6b37753b4a94289fedb29b71773e, type: 2}
   - {fileID: 11400000, guid: 0485fd7558d73e54f99274f394af44cc, type: 2}
   - {fileID: 11400000, guid: c74948806d9efba4ea96051196cc5174, type: 2}
