@@ -12,5 +12,19 @@ namespace Domain.Actors
             Actors = new List<Actor>();
             Player = new Actor();
         }
+
+        public Actor CreateActor(string stat = null, string value = null)
+        {
+            var newActor = new Actor();
+
+            if (stat != null)
+            {
+                newActor.Stats.Add(stat, value ?? "");
+            }
+            
+            Actors.Add(newActor);
+
+            return newActor;
+        }
     }
 }

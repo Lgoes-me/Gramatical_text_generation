@@ -12,13 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9859d5ae54aeea51f98c00c67ae67, type: 3}
   m_Name: 3_DesenvolvementoMeio
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: 
+  <Data>k__BackingField: A vilanesca #Inimigo
   <LockedEntityData>k__BackingField:
     <StatActor>k__BackingField: 0
     <LockedByStat>k__BackingField: 
     <LockedByStatValue>k__BackingField: 
   <Tempo>k__BackingField: 3
-  <Resolvers>k__BackingField: []
+  <Resolvers>k__BackingField:
+  - rid: 28740683140169729
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 28740683140169729
+      type: {class: ActorResolver, ns: Data.Resolvers, asm: Assembly-CSharp}
+      data:
+        <Key>k__BackingField: '#Inimigo'
+        <StatToRead>k__BackingField: NOME
+        <ActorStat>k__BackingField: NPC
+        <ActorStatValue>k__BackingField: INIMIGO
+        <CreateIfNecessary>k__BackingField: 0
+        <Options>k__BackingField:
+        - OutroVilao

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9859d5ae54aeea51f98c00c67ae67, type: 3}
   m_Name: 2_Player
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: '#Nome'
+  <Data>k__BackingField: '#Nome lutando contra o seu Inimigo #Inimigo'
   <LockedEntityData>k__BackingField:
     <StatActor>k__BackingField: 0
     <LockedByStat>k__BackingField: 
@@ -20,6 +20,7 @@ MonoBehaviour:
   <Tempo>k__BackingField: 2
   <Resolvers>k__BackingField:
   - rid: 28740606505254917
+  - rid: 28740683140169728
   references:
     version: 2
     RefIds:
@@ -30,3 +31,14 @@ MonoBehaviour:
         <Tittle>k__BackingField: "Qual \xE9 o nome de quem tem coragem de embarcar
           nessa aventura?"
         <Save>k__BackingField: 1
+    - rid: 28740683140169728
+      type: {class: ActorResolver, ns: Data.Resolvers, asm: Assembly-CSharp}
+      data:
+        <Key>k__BackingField: '#Inimigo'
+        <StatToRead>k__BackingField: NOME
+        <ActorStat>k__BackingField: NPC
+        <ActorStatValue>k__BackingField: INIMIGO
+        <CreateIfNecessary>k__BackingField: 1
+        <Options>k__BackingField:
+        - "Fog\xE3o"
+        - Tv
